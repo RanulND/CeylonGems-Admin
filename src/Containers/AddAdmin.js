@@ -1,100 +1,40 @@
-import React, { useState } from "react";
-import Navbar from "../Components/Navbar/Navbar";
-import axios from "axios";
+import React from "react";
+import AddAdminComponent from "../Components/AddAdmin/AddAdmin";
+import ViewAllAdmin from "../Components/ViewAllAdmin/ViewAllAdmin";
 
 function AddAdmins() {
-    function AddAdmin () {
-        const [data, setData] = useState({
-            firstName : "",
-            lastName : "",
-            nic : "",
-            password : "",
-            email : "",
-            phone : "",
-            adminLevel : 1
-        });
-
-        const handlechange = ({currentTarget : input}) => {
-            setData({...data, [input.name] : input.value})
-        }
-
-        const handlesubmit = async (e) => {
-            e.preventDefault();
-
-            try {
-                const url = 'http://localhost:5000/api/admin/add-admin'
-                const {data : res} = await axios.post(url, data)
-            }catch{
-                console.log(data)
-            }
-        }
-    }
 
     return (
         <div>
-            {/* <Navbar /> */}
             <div className="container">
-                <h2>Add an Admin</h2>
-                <form>
-                    <div className="row mt-5">
-                        <div className="col-md-6">
-                            <div className="row py-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">First Name</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="fname" />
+                <div className="row py-3">
+                    <div className="offset-md-10 col-md-2">
+                        <button className="btn bg-gradient-primary addButton" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ width: "100%" }}><FontAwesomeIcon icon="fa-solid fa-plus" />Add Admin</button>
+
+                    </div>
+
+                    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered" role="document">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title font-weight-normal" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" className="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row py-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Last Name</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="lname" />
+                                <div className="modal-body">
+                                    <AddAdminComponent />
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn bg-gradient-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="row mt-5">
-                        <div className="col-md-6">
-                            <div className="row py-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">NIC</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="nic" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row py-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Phone Number</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="phone" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row mt-5">
-                        <div className="col-md-6">
-                            <div className="row py-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Email</label>
-                                <div class="col-sm-8">
-                                    <input type="email" class="form-control" id="email" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row py-5">
-                                <label for="inputPassword" class="col-sm-4 col-form-label">Password</label>
-                                <div class="col-sm-8">
-                                    <input type="password" class="form-control" id="password" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div className="row">
-                    <button className="btn btn-primary" type="submit">Add</button>
                 </div>
+                <ViewAllAdmin />
             </div>
+
         </div>
     )
 }
