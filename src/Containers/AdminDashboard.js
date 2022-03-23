@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import AddAdminComponent from "../Components/AddAdmin/AddAdmin";
+import Navbar from "../Components/Navbar/Navbar";
 import ViewAllAdmin from "../Components/ViewAllAdmin/ViewAllAdmin";
 
 function AdminDashboard() {
@@ -10,6 +12,8 @@ function AdminDashboard() {
 
     return (
         <div>
+            <Navbar />
+            <Outlet />
             <div className="container py-4">
                 <div className="row py-3">
                     <div className="offset-md-10 col-md-2">

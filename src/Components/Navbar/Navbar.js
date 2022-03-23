@@ -25,8 +25,8 @@ function Navbar() {
                 </div>
                 <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div className="offcanvas-header bg-dark">
-                        <h5 className="offcanvas-title" id="offcanvasExampleLabel">CeylonRuby | Admin Panel</h5>
-                        <button type="button" className="btn" data-bs-dismiss="offcanvas" aria-label="Close" onClick={e => {menuButton()}}>
+                        <h5 className="offcanvas-title" id="offcanvasExampleLabel">CeylonRuby | Admin</h5>
+                        <button type="button" className="btn" data-bs-dismiss="offcanvas" aria-label="Close" onClick={e => {menuButton()}} style={{marginBottom:'0'}}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style={{ fill: 'rgba(255, 255, 255, 1)', color: 'white' }}>
                                 <path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
                                 </path>

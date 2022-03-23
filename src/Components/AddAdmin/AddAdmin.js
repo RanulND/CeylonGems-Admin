@@ -114,8 +114,8 @@ function AddAdminComponent() {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <label className="form-label">First Name</label>
-                                        <input type="text" name="firstName" className="form-control" onChange={(e) => { handlechange(e) }} value={val} />
+                                        {/* <label className="">First Name</label> */}
+                                        <input type="text" name="firstName" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='First Name' />
                                     </div>
                                 </div>
                             </div>
@@ -125,32 +125,8 @@ function AddAdminComponent() {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <label className="form-label">Last Name</label>
-                                        <input type="text" name="lastName" className="form-control" onChange={(e) => { handlechange(e) }} value={val} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row py-3">
-                        <div className="col-md-6">
-                            <div className="row align-items-center">
-
-                                <div>
-                                    <div className="input-group input-group-outline my-3">
-                                        <label className="form-label">Email</label>
-                                        <input type="email" name="email" className="form-control" onChange={(e) => { handlechange(e) }} value={val} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row align-items-center">
-
-                                <div>
-                                    <div className="input-group input-group-outline my-3">
-                                        <label className="form-label">Password</label>
-                                        <input type="password" name="password" className="form-control" onChange={(e) => { handlechange(e) }} value={val} />
+                                        {/* <label className="form-label">Last Name</label> */}
+                                        <input type="text" name="lastName" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Last Name' />
                                     </div>
                                 </div>
                             </div>
@@ -162,8 +138,8 @@ function AddAdminComponent() {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <label className="form-label">NIC</label>
-                                        <input type="text" name="nic" className="form-control" onChange={(e) => { handlechange(e) }} value={val} />
+                                        {/* <label className="form-label">Email</label> */}
+                                        <input type="email" name="email" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Email' />
                                     </div>
                                 </div>
                             </div>
@@ -173,8 +149,32 @@ function AddAdminComponent() {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <label className="form-label">Phone Number</label>
-                                        <input type="text" name="phone" className="form-control" onChange={(e) => { handlechange(e) }} value={val} />
+                                        {/* <label className="form-label">Password</label> */}
+                                        <input type="password" name="password" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Password' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row py-3">
+                        <div className="col-md-6">
+                            <div className="row align-items-center">
+
+                                <div>
+                                    <div className="input-group input-group-outline my-3">
+                                        {/* <label className="form-label">NIC</label> */}
+                                        <input type="text" name="nic" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='NIC'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="row align-items-center">
+
+                                <div>
+                                    <div className="input-group input-group-outline my-3">
+                                        {/* <label className="form-label">Phone Number</label> */}
+                                        <input type="text" name="phone" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Phone Number' />
                                     </div>
                                 </div>
                             </div>

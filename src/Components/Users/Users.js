@@ -42,7 +42,7 @@ function Users() {
 
     return (
         <div className="container">
-            <div className="nav-wrapper position-relative end-0 py-3">
+            {/* <div className="nav-wrapper position-relative end-0 py-3">
                 <ul className="nav nav-pills nav-fill p-1" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#profile-tabs-simple" role="tab"
@@ -57,8 +57,8 @@ function Users() {
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div className="card py-3">
+            </div> */}
+            <div className="card py-5">
                 <div className="table-responsive">
                     <table className="table align-items-center mb-0">
                         <thead>

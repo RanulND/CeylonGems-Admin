@@ -8,6 +8,7 @@ import UserDashboard from './Containers/UserDashboard';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/material-kit.min.css'
 import { useEffect } from 'react';
+import Login from './Containers/Login';
 
 
 export function setScripts() {
@@ -36,12 +37,12 @@ function App() {
     s1.integrity = 'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
     s1.crossOrigin = 'anonymous'
     document.body.appendChild(s1);
-  
+
     const s2 = document.createElement('script');
     s2.src = './js/material-kit.min.js'
     s2.async = true
     document.body.appendChild(s2)
-  
+
     // return () => {
     //     document.body.removeChild(s2);
     //     document.body.removeChild(s1)
@@ -55,24 +56,26 @@ function App() {
     s1.integrity = 'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
     s1.crossOrigin = 'anonymous'
     document.body.appendChild(s1);
-  
+
     const s2 = document.createElement('script');
     s2.src = './js/material-kit.min.js'
     s2.async = true
     // document.body.appendChild(s2)
   })
   return (
-    <Router>
-      {/* {setScripts()} */}
-      <div className="App" style={{fontFamily:'Roboto'}}>
-        <Navbar />
+
+
+    <div className="App" style={{ fontFamily: 'Roboto' }}>
+      <Router>
         <Routes>
           <Route path='/' exact element={<Dashboard />} />
           <Route path='/admin-dashboard' exact element={<AdminDashboard />} />
           <Route path='/user-dashboard' exact element={<UserDashboard />} />
+          <Route path='/login' exact element={<Login />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </div>
+
 
   );
 }
