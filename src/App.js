@@ -1,14 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import Dashboard from './Containers/Dashboard';
+import Dashboard from './Containers/Dashboard/Dashboard';
 import Navbar from './Components/Navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route, useRoutes } from 'react-router-dom'
-import AdminDashboard from './Containers/AdminDashboard';
-import UserDashboard from './Containers/UserDashboard';
+import AdminDashboard from './Containers/Admin Dashboard/AdminDashboard';
+import UserDashboard from './Containers/User Dashboard/UserDashboard';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/material-kit.min.css'
 import { useEffect } from 'react';
 import Login from './Containers/Login';
+import AuctionDashboard from './Containers/Auction Dashboard/AuctionDashboard';
 
 
 export function setScripts() {
@@ -71,6 +72,7 @@ function App() {
           <Route path='/' exact element={<Dashboard />} />
           <Route path='/admin-dashboard' exact element={<AdminDashboard />} />
           <Route path='/user-dashboard' exact element={<UserDashboard />} />
+          <Route path='/auctions' exact element={<AuctionDashboard />} />
           <Route path='/login' exact element={<Login />} />
         </Routes>
       </Router>

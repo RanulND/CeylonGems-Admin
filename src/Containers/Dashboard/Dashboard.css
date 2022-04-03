@@ -1,0 +1,17 @@
+.users{
+    background-image: linear-gradient(195deg, rgb(69, 204, 42), rgb(13, 83, 16));
+    box-shadow: 0 3px 3px 0 rgba(9, 9, 65, .15), 0 3px 1px -2px rgba(9, 9, 65, .2), 0 1px 5px 0 rgba(9, 9, 65, .15) !important;
+    color: white;
+}
+
+.auctions{
+    background-image: linear-gradient(195deg, rgb(42, 118, 204), rgb(13, 63, 83));
+    box-shadow: 0 3px 3px 0 rgba(9, 9, 65, .15), 0 3px 1px -2px rgba(9, 9, 65, .2), 0 1px 5px 0 rgba(9, 9, 65, .15) !important;
+    color: white;
+}
+
+.orders{
+    background-image: linear-gradient(195deg, rgb(204, 128, 42), rgb(83, 64, 13));
+    box-shadow: 0 3px 3px 0 rgba(9, 9, 65, .15), 0 3px 1px -2px rgba(9, 9, 65, .2), 0 1px 5px 0 rgba(9, 9, 65, .15) !important;
+    color: white;
+}

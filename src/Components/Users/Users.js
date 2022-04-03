@@ -42,22 +42,6 @@ function Users() {
 
     return (
         <div className="container">
-            {/* <div className="nav-wrapper position-relative end-0 py-3">
-                <ul className="nav nav-pills nav-fill p-1" role="tablist">
-                    <li className="nav-item">
-                        <a className="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#profile-tabs-simple" role="tab"
-                            aria-controls="profile" aria-selected="true">
-                            Sellers
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#dashboard-tabs-simple" role="tab"
-                            aria-controls="dashboard" aria-selected="false">
-                            Buyers
-                        </a>
-                    </li>
-                </ul>
-            </div> */}
             <div className="card py-5">
                 <div className="table-responsive">
                     <table className="table align-items-center mb-0">
@@ -74,9 +58,6 @@ function Users() {
                                 <tr key={user._id}>
                                     <td>
                                         <div className="d-flex px-2 py-1">
-                                            {/* <div>
-                           <img src="https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/team-2.jpg" className="avatar avatar-sm me-3" />
-                       </div> */}
                                             <div className="d-flex flex-column justify-content-center">
                                                 <h6 className="mb-0 text-sm">{user.firstName + ' ' + user.lastName}</h6>
                                             </div>

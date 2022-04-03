@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import AddAdminComponent from "../Components/AddAdmin/AddAdmin";
-import Navbar from "../Components/Navbar/Navbar";
-import ViewAllAdmin from "../Components/ViewAllAdmin/ViewAllAdmin";
+import AddAdminComponent from "../../Components/AddAdmin/AddAdmin";
+import Navbar from "../../Components/Navbar/Navbar";
+import ViewAllAdmin from "../../Components/ViewAllAdmin/ViewAllAdmin";
 
 function AdminDashboard() {
 

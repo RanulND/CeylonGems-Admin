@@ -16,8 +16,6 @@ function ViewAllAdmin() {
         }).catch(err => {
             console.log(err)
         })
-
-        console.log(admins)
     }
 
     function removeAdmin(event,id) {
