@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import adminPhoto from '../assets/img/admin.png'
+import adminPhoto from '../../assets/img/admin.png'
 
 function Login() {
 

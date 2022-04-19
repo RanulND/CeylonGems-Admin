@@ -8,8 +8,9 @@ import UserDashboard from './Containers/User Dashboard/UserDashboard';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/material-kit.min.css'
 import { useEffect } from 'react';
-import Login from './Containers/Login';
+import Login from './Containers/Login/Login';
 import AuctionDashboard from './Containers/Auction Dashboard/AuctionDashboard';
+import OrderDashboard from './Containers/Order Dashboard/OrderDashboard';
 
 
 export function setScripts() {
@@ -73,6 +74,7 @@ function App() {
           <Route path='/admin-dashboard' exact element={<AdminDashboard />} />
           <Route path='/user-dashboard' exact element={<UserDashboard />} />
           <Route path='/auctions' exact element={<AuctionDashboard />} />
+          <Route path='/orders' exact element={<OrderDashboard />} />
           <Route path='/login' exact element={<Login />} />
         </Routes>
       </Router>

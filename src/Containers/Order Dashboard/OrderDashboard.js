@@ -1,15 +1,15 @@
 import React from "react";
-import Auctions from "../../Components/Auctions/Auction";
 import Navbar from "../../Components/Navbar/Navbar";
+import Orders from "../../Components/Orders/Order";
 
-function AuctionDashboard() {
+function OrderDashboard() {
 
     return (
         <>
             <Navbar />
-            <Auctions />
+            <Orders />
         </>
     )
 }
 
-export default AuctionDashboard;
+export default OrderDashboard;
