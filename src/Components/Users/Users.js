@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Users.css'
-import axios from 'axios'
+import axios from "../../Services/ApiService";
 
 function Users() {
 
@@ -21,7 +21,7 @@ function Users() {
 
         // setScript();
 
-        const url = 'http://localhost:5000/api/admin/get-users'
+        const url = 'admin/get-users'
         axios.get(url).then(res => {
             setUsers(res.data.data)
             console.log(res.data.data)
