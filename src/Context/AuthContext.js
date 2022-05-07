@@ -1,6 +1,7 @@
 import jwtDecode from "jwt-decode"
 import React, { createContext, useContext, useEffect, useState } from "react"
-import { getAccessToken, removeAccessToken } from "../services/TokenService"
+import { getAccessToken } from "../Services/TokenService"
+
 
 const AuthContext = createContext({
     currentUser: null,
@@ -27,7 +28,6 @@ const AuthProvider = ({children}) => {
 
     const logout = () => {
         setCurrentUser(null)
-        removeAccessToken
     }
 
     useEffect(() => {

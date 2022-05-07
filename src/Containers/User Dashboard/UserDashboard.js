@@ -3,8 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Users from "../../Components/Users/Users";
 
-function UserDashboard() {
-
+const UserDashboard = () => {
 
     return (
         <div className="">

@@ -1,43 +1,21 @@
 import React, { useEffect, useState } from "react";
 import './Users.css'
 import axios from "../../Services/ApiService";
+import { getUsers } from "../../Services/UserService";
 
-function Users() {
+const Users = () => {
 
     const [users, setUsers] = useState([])
 
-    useEffect(() => {
-        function setScript() {
-            // const s = document.createElement('script');
-            // s.src = 'http://localhost:3000/assets/js/material-kit.min.js'
-            // s.async = true
+    useEffect(async () => {
 
-            // document.body.appendChild(s);
-
-            // return () => {
-            //     document.body.removeChild(s);
-            // }
-        }
-
-        // setScript();
-
-        const url = 'admin/get-users'
-        axios.get(url).then(res => {
+        try {
+            const res = await getUsers()
             setUsers(res.data.data)
-            console.log(res.data.data)
-        }).catch(err => {
+        } catch (err) {
             console.log(err)
-        })
-
-        // const s = document.createElement('script');
-        // s.src = 'http://localhost:3000/assets/js/material-kit.min.js'
-        // s.async = true
-
-        // document.body.appendChild(s);
-
-        // return () => {
-        //     document.body.removeChild(s);
-        // }
+        }
+        
     }, [])
 
     return (

@@ -1,50 +1,33 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import adminPhoto from '../../assets/img/admin.png'
+import { signIn } from "../../Services/adminService";
+import { setAccessToken } from "../../Services/TokenService";
 
-function Login() {
+const Login = () => {
+    const navigate = useNavigate()
 
     const [admin, setAdmin] = useState({
         email: '',
         password : ''
     })
-
     
     const [val,setVal] = useState()
 
-
     const handlechange = (event) => {
         setAdmin({ ...admin, [event.target.name]: event.target.value })
-        // console.log(admin)
     }
 
-    function adminSignIn(event) {
+    const adminSignIn = async (event) => {
         event.preventDefault()
 
-        // console.log(admin)
-
-        const url = 'http://localhost:5000/api/auth/admin/signin'
-
-        axios.post(url, admin).then(res => {
-            if(res.data.data){
-                console.log(res.data.message)
-                window.location = '/'
-            }else{
-                console.log(res.data.message)
-                alert(res.data.message)
-            }
-            
-            setAdmin({
-                email : '',
-                password : ''
-            })
-            
-            setVal()
-            // Navigate('/')
-        }).catch(err => {
-            // console.log(err)
-        })
+        try {
+            const res = await signIn(admin)
+            setAccessToken(res.data.token)
+            navigate('/dashboard')
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (

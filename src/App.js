@@ -12,44 +12,7 @@ import Login from './Containers/Login/Login';
 import AuctionDashboard from './Containers/Auction Dashboard/AuctionDashboard';
 import OrderDashboard from './Containers/Order Dashboard/OrderDashboard';
 
-
-export function setScripts() {
-  const s1 = document.createElement('script');
-  s1.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
-  s1.async = true
-  s1.integrity = 'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
-  s1.crossOrigin = 'anonymous'
-  document.body.appendChild(s1);
-
-  const s2 = document.createElement('script');
-  s2.src = './js/material-kit.min.js'
-  s2.async = true
-  document.body.appendChild(s2)
-
-  // return () => {
-  //     document.body.removeChild(s2);
-  //     document.body.removeChild(s1)
-  // }
-}
-function App() {
-  function setScripts() {
-    const s1 = document.createElement('script');
-    s1.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
-    s1.async = true
-    s1.integrity = 'sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
-    s1.crossOrigin = 'anonymous'
-    document.body.appendChild(s1);
-
-    const s2 = document.createElement('script');
-    s2.src = './js/material-kit.min.js'
-    s2.async = true
-    document.body.appendChild(s2)
-
-    // return () => {
-    //     document.body.removeChild(s2);
-    //     document.body.removeChild(s1)
-    // }
-  }
+const App = () => {
 
   useEffect(() => {
     const s1 = document.createElement('script');
@@ -64,23 +27,21 @@ function App() {
     s2.async = true
     // document.body.appendChild(s2)
   })
-  return (
 
+  return (
 
     <div className="App" style={{ fontFamily: 'Roboto' }}>
       <Router>
         <Routes>
-          <Route path='/' exact element={<Dashboard />} />
+          <Route path='/' exact element={<Login />} />
           <Route path='/admin-dashboard' exact element={<AdminDashboard />} />
           <Route path='/user-dashboard' exact element={<UserDashboard />} />
           <Route path='/auctions' exact element={<AuctionDashboard />} />
           <Route path='/orders' exact element={<OrderDashboard />} />
-          <Route path='/login' exact element={<Login />} />
+          <Route path='/dashboard' exact element={<Dashboard />} />
         </Routes>
       </Router>
     </div>
-
-
   );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import './Auction.css'
 import axios from "axios";
 
-function Auctions() {
+const Auctions = () => {
 
     return (
         <>

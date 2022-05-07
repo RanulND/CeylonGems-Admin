@@ -1,21 +1,11 @@
-import axios from 'axios'
+import axios from "./ApiService"
+
+export const removeAdmin = (id) => axios.post('admin/remove-admin', { id })
+
+export const addAdmin = (data) => axios.post('admin/add-admins', data)
 
 export const getAdmins = () => axios.get('admin/get-admins')
-        // .then(res => {
-        //     // console.log(res.data)
-        //     let admins = res.data;
-        //     console.log(admins)
-        //     return res.data;
-        // }).catch(err => {
-        //     console.log(err)
-        // })
 
-    // return () => {
-    //     const url = 'http://localhost:5000/api/admin/get-admins'
-    //     axios.get(url).then(res => {
-    //         console.log(res.data)
-    //         return res.data;
-    //     }).catch(err => {
-    //         console.log(err)
-    //     })
-    // };
+export const counts = () => axios.get('admin/get-count')
+
+export const signIn = (data) => axios.post('auth/admin/signin', data)

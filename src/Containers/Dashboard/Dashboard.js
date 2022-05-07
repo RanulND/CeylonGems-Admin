@@ -1,36 +1,31 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import { Outlet } from "react-router-dom";
-import ViewAllAdmin from "../../Components/ViewAllAdmin/ViewAllAdmin";
-// import NewNav from "../Components/NewNav";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import './Dashboard.css'
+import { counts } from "../../Services/adminService";
 
-function Dashboard() {
+const Dashboard = () => {
 
     const [userCount, setUserCount] = useState(0)
     const [auctionCount, setAuctionCount] = useState(0)
     const [orderCount, setOrderCount] = useState(0)
 
-    function setCounts() {
-        const url = "http://localhost:5000/api/admin/get-count"
-        axios.get(url).then(res => {
+    const setCounts = async () => {
+        try{
+            const res = await counts()
             setUserCount(res.data.data.users)
             setAuctionCount(res.data.data.auctions)
             setOrderCount(res.data.data.orders)
-        }).catch(err => {
+        }catch (err) {
             console.log(err)
-        })
+        }
     }
 
     useEffect(()=> {
         setCounts()
-    }, 0)
+    }, [])
     return (
         <div>
-            {/* <Navbar /> */}
-            {/* Hello Dashboard */}
             <Navbar />
             <Outlet />
             <div className="container">
