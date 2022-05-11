@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import AddAdminComponent from "../../Components/AddAdmin/AddAdmin";
 import Navbar from "../../Components/Navbar/Navbar";
 import ViewAllAdmin from "../../Components/ViewAllAdmin/ViewAllAdmin";
+import './AdminDashboard.css'
 
 const AdminDashboard = () => {
 
@@ -14,7 +15,7 @@ const AdminDashboard = () => {
         <div>
             <Navbar />
             <Outlet />
-            <div className="container py-4">
+            <div className="container py-4 admin-dashboard">
                 <div className="row py-3">
                     <div className="offset-md-10 col-md-2">
                         <button className="btn addButton bg-gradient-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add admin</button>

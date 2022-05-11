@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from "react";
 import './Users.css'
-import axios from "../../Services/ApiService";
 import { getUsers } from "../../Services/UserService";
+import { Link } from "react-router-dom";
 
 const Users = () => {
 
     const [users, setUsers] = useState([])
 
-    useEffect(async () => {
-
+    const getAllUsers = async () => {
         try {
             const res = await getUsers()
             setUsers(res.data.data)
         } catch (err) {
             console.log(err)
         }
-        
+
+    }
+
+    useEffect(() => {
+        getAllUsers()
+       
     }, [])
 
     return (
-        <div className="container">
+        <div className="container users">
             <div className="card py-5">
                 <div className="table-responsive">
                     <table className="table align-items-center mb-0">
@@ -28,6 +32,7 @@ const Users = () => {
                                 <th className="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">User</th>
                                 <th className="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Email</th>
                                 <th className="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Phone Number</th>
+                                <th className="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Status</th>
                                 <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                             </tr>
                         </thead>
@@ -47,8 +52,18 @@ const Users = () => {
                                     <td className="text-sm">
                                         <h6 className="mb-0 text-sm">{user.phoneNumber}</h6>
                                     </td>
+                                    <td className="text-sm">
+                                        {
+                                            user.verified ? (
+                                                <h6 className="mb-0 text-sm">Verified</h6>
+
+                                            ) : (
+                                                <h6 className="mb-0 text-sm">Not verified</h6>
+                                            )
+                                        }
+                                    </td>
                                     <td className="align-middle text-center">
-                                        <button className="btn viewButton" type="submit" >View</button>
+                                        <Link className="btn viewButton" type="submit" to={`/user-dashboard/user/${user._id}`}>View</Link>
                                     </td>
                                 </tr>
                             ))}

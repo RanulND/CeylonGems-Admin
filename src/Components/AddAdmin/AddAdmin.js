@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Navbar/Navbar";
-import axios from "axios";
 import './AddAdmin.css'
-import { addAdmin, getAdmins } from '../../Services/adminService'
+import { addAdmin } from '../../Services/adminService'
 // import '../../assets/css/material-kit.min.css'
 // import '../../assets/js/material-kit.min.js";
 
@@ -73,7 +71,7 @@ const AddAdminComponent = () => {
 
     return (
         <div>
-            <div className="container">
+            <div className="container add-admin">
                 <form onSubmit={e => handlesubmit(e)}>
                     <div className="row py-3">
                         <div className="col-md-6">

@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import Dashboard from './Containers/Dashboard/Dashboard';
-import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter as Router, Routes, Route, useRoutes } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import AdminDashboard from './Containers/Admin Dashboard/AdminDashboard';
 import UserDashboard from './Containers/User Dashboard/UserDashboard';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,6 +9,7 @@ import { useEffect } from 'react';
 import Login from './Containers/Login/Login';
 import AuctionDashboard from './Containers/Auction Dashboard/AuctionDashboard';
 import OrderDashboard from './Containers/Order Dashboard/OrderDashboard';
+import User from './Containers/User/User';
 
 const App = () => {
 
@@ -39,6 +38,7 @@ const App = () => {
           <Route path='/auctions' exact element={<AuctionDashboard />} />
           <Route path='/orders' exact element={<OrderDashboard />} />
           <Route path='/dashboard' exact element={<Dashboard />} />
+          <Route path='/user-dashboard/user/:id' exact element={<User />} />
         </Routes>
       </Router>
     </div>

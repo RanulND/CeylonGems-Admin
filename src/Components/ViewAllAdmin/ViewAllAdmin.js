@@ -35,7 +35,7 @@ const ViewAllAdmin = () => {
 
     
     return (
-        <div className="card py-3">
+        <div className="card py-3 view-all-admins">
             <div className="table-responsive">
                 <table className="table align-items-center mb-0 shadow-lg">
                     <thead>

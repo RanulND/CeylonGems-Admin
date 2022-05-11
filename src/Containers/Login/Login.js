@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import adminPhoto from '../../assets/img/admin.png'
+import { useAuth } from "../../Context/AuthContext";
 import { signIn } from "../../Services/adminService";
 import { setAccessToken } from "../../Services/TokenService";
 
 const Login = () => {
     const navigate = useNavigate()
+    const {currentUser} = useAuth()
 
     const [admin, setAdmin] = useState({
         email: '',
@@ -29,6 +31,12 @@ const Login = () => {
             console.log(err)
         }
     }
+
+    useEffect(() => {
+        if(currentUser){
+            return navigate('/dashboard')
+        }
+    },[])
 
     return (
         <>

@@ -1,13 +1,11 @@
 import React from "react";
 import './Auction.css'
-import axios from "axios";
 
 const Auctions = () => {
 
     return (
         <>
-
-            <div className="container">
+            <div className="container auctions">
                 <div className="card">
                     <div className="table-responsive">
                         <table className="table align-items-center mb-0">
@@ -25,7 +23,7 @@ const Auctions = () => {
                                     <td>
                                         <div className="d-flex px-2">
                                             <div>
-                                                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-spotify.svg" className="avatar avatar-sm rounded-circle me-2" />
+                                                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-spotify.svg" className="avatar avatar-sm rounded-circle me-2" alt="Its a image" />
                                             </div>
                                             <div className="my-auto">
                                                 <h6 className="mb-0 text-xs">Spotify</h6>

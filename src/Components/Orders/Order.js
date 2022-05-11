@@ -4,7 +4,7 @@ const Orders = () => {
     
     return (
         <>
-            <div className="container">
+            <div className="container orders">
                 <div className="card">
                     <div className="table-responsive">
                         <table className="table align-items-center mb-0">

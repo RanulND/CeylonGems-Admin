@@ -6,7 +6,7 @@ const Navbar = () => {
   
     return (
         <>
-            <div className="container py-3">
+            <div className="container py-3 nav-bar">
                 <div className="row text-left">
                     <div className="col-md-1 text-left">
                         <button className="btn btn-primary menuButton" id="menuButton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">

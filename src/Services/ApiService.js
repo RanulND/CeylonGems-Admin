@@ -1,5 +1,5 @@
 import ax from "axios"
-import { getAccessToken, getRefreshToken, removeAccessToken, setAccessToken } from "./TokenService"
+import { getAccessToken, removeAccessToken } from "./TokenService"
 
 const axios = ax.create({
     baseURL: 'http://localhost:5000/api/',

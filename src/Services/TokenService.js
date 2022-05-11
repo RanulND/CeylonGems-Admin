@@ -10,4 +10,4 @@ export const removeAccessToken = () => {
     window.dispatchEvent(new Event('userLoggedOut'))
 }
 
-const encode = (token) => token.split('').map(c => c.charCodeAt(0)).map(n => (n + 10).toString(16)).join('')
+// const encode = (token) => token.split('').map(c => c.charCodeAt(0)).map(n => (n + 10).toString(16)).join('')

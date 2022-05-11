@@ -28,7 +28,7 @@ const Dashboard = () => {
         <div>
             <Navbar />
             <Outlet />
-            <div className="container">
+            <div className="container dashboard">
                 <div className="row">
                     <div className="col-md-4 p-2">
                         <div className="card p-4 users">
