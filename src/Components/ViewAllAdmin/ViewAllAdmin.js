@@ -1,48 +1,41 @@
 import React, { useEffect, useState } from 'react'
 import './ViewAllAdmin.css'
-import axios from 'axios';
-// import { getAdmins } from '../../Services/adminService';
+import { getAdmins, removeAdmin } from '../../Services/adminService';
 
-function ViewAllAdmin() {
+const ViewAllAdmin = () => {
 
     const [admins, setAdmins] = useState([]);
 
-    function getAdmins() {
-        const url = 'http://localhost:5000/api/admin/get-admins'
-        axios.get(url).then(res => {
-            // console.log(res.data)
+    const  getAdmin = async () =>{
+        try{
+            const res = await getAdmins()
             setAdmins(res.data)
-
-        }).catch(err => {
+            console.log(res.data)
+        }catch (err) {
             console.log(err)
-        })
+        }
 
-        console.log(admins)
     }
 
-    function removeAdmin(event,id) {
-        const data = {
-            id: id
-        }
+    const remove = async (event,id) => {
         event.preventDefault();
-        console.log(id)
-        const url = 'http://localhost:5000/api/admin/remove-admin'
-        axios.post(url,data).then( res => {
-            alert(res.data.message);
-            // console.log(res.data.message)
-            getAdmins()
-        }).catch(err => {
+
+        try{
+            const res = await removeAdmin(id)
+            alert(res.data.message)
+            getAdmin()
+        }catch (err) {
             console.log(err)
-        })
+        }
     }
 
     useEffect(() => {
-        getAdmins()
+        getAdmin()
     }, [])
 
     
     return (
-        <div className="card py-3">
+        <div className="card py-3 view-all-admins">
             <div className="table-responsive">
                 <table className="table align-items-center mb-0 shadow-lg">
                     <thead>
@@ -73,7 +66,7 @@ function ViewAllAdmin() {
                                     <h6 className="mb-0 text-sm">{admin.phone}</h6>
                                 </td>
                                 <td className="align-middle text-center">
-                                    <button className="btn removeButton" type="submit" onClick={(e) => removeAdmin(e,admin._id)} >Remove</button>
+                                    <button className="btn removeButton" type="submit" onClick={(e) => remove(e,admin._id)} >Remove</button>
                                 </td>
                             </tr>
 
