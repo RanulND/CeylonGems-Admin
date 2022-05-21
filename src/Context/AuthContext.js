@@ -7,6 +7,7 @@ const AuthContext = createContext({
     currentUser: null,
     role: null,
     handleUser: () => {},
+    setRole: () => {},
     logout: () => {}
 })
 
@@ -15,12 +16,14 @@ export const useAuth = () => useContext(AuthContext)
 const AuthProvider = ({children}) => {
     const [currentUser, setCurrentUser] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
+    const [role,setRole] = useState(null)
     
     const handleUser = () => {
         const token = getAccessToken()
         if(token) {
             const user = jwtDecode(token)
             setCurrentUser(user)
+            setRole('admin')
         }else{
             setCurrentUser(null)
         }

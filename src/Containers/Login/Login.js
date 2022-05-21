@@ -4,6 +4,7 @@ import adminPhoto from '../../assets/img/admin.png'
 import { useAuth } from "../../Context/AuthContext";
 import { signIn } from "../../Services/adminService";
 import { setAccessToken } from "../../Services/TokenService";
+import './Login.css'
 
 const Login = () => {
     const navigate = useNavigate()
@@ -28,7 +29,7 @@ const Login = () => {
             setAccessToken(res.data.token)
             navigate('/dashboard')
         } catch (err) {
-            console.log(err)
+            alert(err?.response?.data?.message || 'Something went wrong')
         }
     }
 
@@ -40,7 +41,7 @@ const Login = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container login">
                 <div className="row vh-100 align-items-center">
                     <div className="col-md-8">
                         <img src={adminPhoto}  style={{width : "100%"}}/>
@@ -57,7 +58,7 @@ const Login = () => {
                                 <input type="password" name="password" className="form-control" value={val} onChange={(e) => handlechange(e)} placeholder='Password' />
                             </div>
                             <div className="row justify-content-center py-3">
-                                <button className="btn addButton" style={{width: "40%"}}>Login</button>
+                                <button className="btn loginButton" style={{width: "40%"}}>Login</button>
                             </div>
                         </form>
                     </div>

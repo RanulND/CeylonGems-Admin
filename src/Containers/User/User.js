@@ -19,8 +19,8 @@ const User = () => {
         try {
             const res = await getUser(id)
             setUser(res.data.data)
-            setBuyer(res.data.data.role.buyer)
-            setSeller(res.data.data.role.seller)
+            setBuyer(res.data.data.roles.buyer)
+            setSeller(res.data.data.roles.seller)
         } catch (err) {
             console.log(err)
         }

@@ -32,7 +32,7 @@ const Users = () => {
                                 <th className="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">User</th>
                                 <th className="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Email</th>
                                 <th className="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Phone Number</th>
-                                <th className="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Status</th>
+                                <th className="text-center text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Verify Status</th>
                                 <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                             </tr>
                         </thead>
