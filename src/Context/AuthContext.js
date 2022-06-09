@@ -1,6 +1,8 @@
 import jwtDecode from "jwt-decode"
 import React, { createContext, useContext, useEffect, useState } from "react"
 import { getAccessToken } from "../Services/TokenService"
+import { initializeApp } from "firebase/app";
+import firebaseConfig from "../helpers/firebase";
 
 
 const AuthContext = createContext({
@@ -34,6 +36,7 @@ const AuthProvider = ({children}) => {
     }
 
     useEffect(() => {
+        initializeApp(firebaseConfig)
         window.addEventListener('userLoggedIn', handleUser )
         window.addEventListener('userLoggedOut', logout)
 

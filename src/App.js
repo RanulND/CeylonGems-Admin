@@ -10,6 +10,7 @@ import Login from './Containers/Login/Login';
 import AuctionDashboard from './Containers/Auction Dashboard/AuctionDashboard';
 import OrderDashboard from './Containers/Order Dashboard/OrderDashboard';
 import User from './Containers/User/User';
+import Chat from './Containers/Chat/Chat';
 
 const App = () => {
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route path='/orders' exact element={<OrderDashboard />} />
           <Route path='/dashboard' exact element={<Dashboard />} />
           <Route path='/user-dashboard/user/:id' exact element={<User />} />
+          <Route path='/chat' exact element={<Chat />} />
         </Routes>
       </Router>
     </div>
