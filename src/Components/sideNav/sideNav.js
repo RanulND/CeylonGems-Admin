@@ -30,7 +30,7 @@ const SideNav = () => {
             <SidebarContent>
                 <Menu iconShape="square" popperArrow={true}>
 
-                    <MenuItem icon={<AiFillDashboard />}><Link to={'/'}>Dashboard </Link></MenuItem>
+                    <MenuItem icon={<AiFillDashboard />} data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"><Link to={'/'}>Dashboard </Link></MenuItem>
                     <MenuItem icon={<FaUserAlt />}><Link to={'/user-dashboard'}>Users </Link></MenuItem>
                     <MenuItem icon={<RiAuctionFill />}><Link to={'/auctions'}></Link>Auctions </MenuItem>
                     <MenuItem icon={<RiBillFill />}><Link to={'/orders'}>Orders </Link></MenuItem>

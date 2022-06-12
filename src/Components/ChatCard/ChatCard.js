@@ -10,8 +10,8 @@ const ChatCard = ({ userX }) => {
 
     const countUnread = () => {
         var count = 0
-        for(let i=0; i< user?.chats.length; i++){
-            if(user?.chats[i]?.isRead == false){
+        for (let i = 0; i < user?.chats.length; i++) {
+            if (user?.chats[i]?.isRead === false) {
                 count++
             }
         }
@@ -41,12 +41,12 @@ const ChatCard = ({ userX }) => {
                                     {
                                         // console.log('user', user?.chats[0]?.msg)
                                         new Date(user?.chats[user?.chats.length - 1]?.sentAt).toUTCString().split(' ').slice(0, 4).join(' ')
-                                        
+
                                     }
                                 </div>
                             </div>
                             <div className="row py-1">
-                                <div className="col-md-8 msg" style={{ textAlign: 'left' }} >
+                                <div className="col-md-8 msg" style={{ textAlign: 'left', textTransform: "none", fontSize: '15px' }} >
                                     <span className="">
                                         {
                                             // console.log('user', user?.chats[0]?.msg)
@@ -54,9 +54,13 @@ const ChatCard = ({ userX }) => {
                                         }
                                     </span>
                                 </div>
-                                <div className="col-md-4 unread-msg" style={{ textAlign: 'right' }}>
-                                    <span className="">{countUnread()}</span>
-                                </div>
+                                {
+                                    countUnread() > 0 &&
+                                    <div className="col-md-4 unread-msg" style={{ textAlign: 'right', color: 'white' }}>
+                                        <span className="badge rounded-pill bg-info text-dark"><p className="p-0 m-0" style={{ color: 'white', fontSize: '11px' }}>{countUnread()}</p></span>
+                                    </div>
+                                }
+
                             </div>
                         </div>
                     </div>
