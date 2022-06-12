@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './Context/AuthContext';
+import ChatProvider from './Context/ChatContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <ChatProvider>
+        <App />
+      </ChatProvider>
     </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
