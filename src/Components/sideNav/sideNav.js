@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import 'react-pro-sidebar/dist/css/styles.css'
 import './SideNav.css'
 import { FaGem, FaUserAlt, } from 'react-icons/fa';
-import { RiAuctionFill, RiBillFill, RiAdminFill, } from 'react-icons/ri'
+import { RiAuctionFill, RiBillFill, RiAdminFill, RiMistFill} from 'react-icons/ri'
 import { MdPayments } from 'react-icons/md'
 import { BsFillChatTextFill, BsArrowRightSquareFill, BsArrowLeftSquareFill } from 'react-icons/bs'
 import { AiFillDashboard } from 'react-icons/ai'
@@ -34,6 +34,7 @@ const SideNav = () => {
                     <MenuItem icon={<FaUserAlt />}><Link to={'/user-dashboard'}>Users </Link></MenuItem>
                     <MenuItem icon={<RiAuctionFill />}><Link to={'/auctions'}></Link>Auctions </MenuItem>
                     <MenuItem icon={<RiBillFill />}><Link to={'/orders'}>Orders </Link></MenuItem>
+                    <MenuItem icon={<RiMistFill />}><Link to={'/non-verified-gems'}>Verify Gems</Link></MenuItem>
                     <MenuItem icon={<RiAdminFill />}><Link to={'/admin-dashboard'}>Admins</Link></MenuItem>
                     {/* <MenuItem icon={<MdPayments />}><Link to={'/payment-history'}></Link>Payment History</MenuItem> */}
                     <MenuItem icon={<BsFillChatTextFill />}><Link to={'/chat'}></Link>Chat</MenuItem>
