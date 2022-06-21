@@ -10,10 +10,13 @@ const OrderDashboard = () => {
             <div className="d-flex">
                 <SideNav />
                 <main style={{ display: 'flex', flexGrow: 1 }}>
-                <Orders />
+                    <div className="container-fluid ps-5 pe-0">
+                        <Navbar />
+                        <Orders />
+                    </div>
                 </main>
             </div>
-            
+
         </>
     )
 }

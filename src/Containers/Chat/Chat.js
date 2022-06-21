@@ -94,14 +94,15 @@ const Chat = () => {
                 console.log('msg', selectedUserMsgs)
             }
             <main style={{ display: 'flex', flexGrow: 1 }}>
-                <div className='container-fluid chat'>
-                    <div className='row' style={{ minHeight: '100vh' }}>
+                <div className='container-fluid chat ps-5 pe-0'>
+                    <Navbar />
+                    <div className='row m-0' style={{ minHeight: '100vh' }}>
                         <div className='col-md-5'>
                             {
                                 existingChats?.map(user => (
-                                    <button className='btn chatcard p-0' onClick={() => handleChatCardClick(user.id)}>
+                                    <button className='btn chatcard p-0' onClick={() => handleChatCardClick(user.id)} key={user.name}>
                                         {/* {user.name} */}
-                                        <ChatCard userX={user} key={user.name} />
+                                        <ChatCard userX={user}  />
                                         {/* {console.log('chat', user)} */}
                                     </button>
                                 ))

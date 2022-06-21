@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ViewAllAdmin.css'
 import { getAdmins, removeAdmin } from '../../Services/adminService';
 
-const ViewAllAdmin = () => {
+const ViewAllAdmin = ({ setGetAdminFunction }) => {
 
     const [admins, setAdmins] = useState([]);
 
@@ -31,6 +31,7 @@ const ViewAllAdmin = () => {
 
     useEffect(() => {
         getAdmin()
+        getAdmin && setGetAdminFunction(getAdmin)
     }, [])
 
     

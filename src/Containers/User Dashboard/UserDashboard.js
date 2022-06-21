@@ -10,7 +10,10 @@ const UserDashboard = () => {
         <div className="d-flex">
             <SideNav />
             <main style={{ display: 'flex', flexGrow: 1 }}>
-                <Users />
+                <div className="container-fluid ps-5 pe-0">
+                    <Navbar />
+                    <Users />
+                </div>
             </main>
         </div>
     )

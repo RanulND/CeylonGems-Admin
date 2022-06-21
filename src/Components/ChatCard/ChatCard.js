@@ -30,7 +30,7 @@ const ChatCard = ({ userX }) => {
                 !isLoading && (
                     <div className="row align-items-center justify-content-center px-4 py-2">
                         <div className="col-md-2">
-                            IMG
+                        <img src={require('../../assets/img/team-2.jpg')} alt={'User'} className='p-0 m-2 user-image col-4' />
                         </div>
                         <div className="col-md-10 name">
                             <div className="row py-1">

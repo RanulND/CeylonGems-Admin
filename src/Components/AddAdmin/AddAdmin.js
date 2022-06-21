@@ -23,7 +23,7 @@ export function setScripts() {
 }
 
 
-const AddAdminComponent = () => {
+const AddAdminComponent = ({ getAdminFunc }) => {
 
     const [data, setData] = useState({
         firstName: "",
@@ -35,11 +35,11 @@ const AddAdminComponent = () => {
         adminLevel: 1
     });
 
-    const [val, setVal] = useState()
+    const [val, setVal] = useState('')
 
     const handlechange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
-        // console.log(data)
+        console.log(data)
     }
 
     // }
@@ -58,7 +58,8 @@ const AddAdminComponent = () => {
                 phone: "",
                 adminLevel: 0
             })
-            setVal()
+
+            getAdminFunc && getAdminFunc();
         } catch (err) {
             console.log(err)
         }
@@ -79,7 +80,7 @@ const AddAdminComponent = () => {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <input type="text" name="firstName" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='First Name' />
+                                        <input type="text" name="firstName" className="form-control" value={data.firstName} onChange={(e) => { handlechange(e) }}  placeholder='First Name' />
                                     </div>
                                 </div>
                             </div>
@@ -89,29 +90,7 @@ const AddAdminComponent = () => {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <input type="text" name="lastName" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Last Name' />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row py-3">
-                        <div className="col-md-6">
-                            <div className="row align-items-center">
-
-                                <div>
-                                    <div className="input-group input-group-outline my-3">
-                                        <input type="email" name="email" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Email' />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="row align-items-center">
-
-                                <div>
-                                    <div className="input-group input-group-outline my-3">
-                                        <input type="password" name="password" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Password' />
+                                        <input type="text" name="lastName" className="form-control" value={data.lastName} onChange={(e) => { handlechange(e) }}  placeholder='Last Name' />
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +102,7 @@ const AddAdminComponent = () => {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <input type="text" name="nic" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='NIC' />
+                                        <input type="email" name="email" className="form-control" value={data.email} onChange={(e) => { handlechange(e) }} placeholder='Email' />
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +112,29 @@ const AddAdminComponent = () => {
 
                                 <div>
                                     <div className="input-group input-group-outline my-3">
-                                        <input type="text" name="phone" className="form-control" onChange={(e) => { handlechange(e) }} value={val} placeholder='Phone Number' />
+                                        <input type="password" name="password" className="form-control" value={data.password} onChange={(e) => { handlechange(e) }} placeholder='Password' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row py-3">
+                        <div className="col-md-6">
+                            <div className="row align-items-center">
+
+                                <div>
+                                    <div className="input-group input-group-outline my-3">
+                                        <input type="text" name="nic" className="form-control" value={data.nic} onChange={(e) => { handlechange(e) }} placeholder='NIC' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="row align-items-center">
+
+                                <div>
+                                    <div className="input-group input-group-outline my-3">
+                                        <input type="text" name="phone" className="form-control" value={data.phone} onChange={(e) => { handlechange(e) }} placeholder='Phone Number' />
                                     </div>
                                 </div>
                             </div>

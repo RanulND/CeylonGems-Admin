@@ -19,3 +19,9 @@
 .chat-card .nameTxt{
     font-size: 1rem;
 }
+
+.chat-card .user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}

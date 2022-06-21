@@ -21,7 +21,7 @@ const SideNav = () => {
     }
 
     return (
-        <ProSidebar width={'270px'} collapsed={collapsed} collapsedWidth={'80px'} breakPoint="md" toggled={toggled} onToggle={handleToggle}>
+        <ProSidebar className="fixed" width={'270px'} collapsed={collapsed} collapsedWidth={'80px'} breakPoint="md" toggled={toggled} onToggle={handleToggle}>
             <SidebarHeader className="py-1">
                 <Menu>
                     <MenuItem style={{ fontWeight: 'bold' }} icon={<FaGem />}><Link to={'/'}>Ceylon Ruby</Link></MenuItem>
@@ -30,7 +30,7 @@ const SideNav = () => {
             <SidebarContent>
                 <Menu iconShape="square" popperArrow={true}>
 
-                    <MenuItem icon={<AiFillDashboard />} data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"><Link to={'/'}>Dashboard </Link></MenuItem>
+                    <MenuItem icon={<AiFillDashboard />} data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right"><Link to={'/dashboard'}>Dashboard </Link></MenuItem>
                     <MenuItem icon={<FaUserAlt />}><Link to={'/user-dashboard'}>Users </Link></MenuItem>
                     <MenuItem icon={<RiAuctionFill />}><Link to={'/auctions'}></Link>Auctions </MenuItem>
                     <MenuItem icon={<RiBillFill />}><Link to={'/orders'}>Orders </Link></MenuItem>
