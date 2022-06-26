@@ -1,10 +1,34 @@
-import React from "react";
-import './Auction.css'
 
-const Auctions = () => {
+import './Auction.css'
+import { getAuctions } from "../../Services/auctionService";
+import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
+
+
+const Auctions = (props) => {
+    const [auctions, setAuctions] = useState([])
+  
+
+    const getAllAuctions = async () => {
+        try {
+            const res = await getAuctions()
+            setAuctions(res.data)
+            console.log(res.data)
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
+    useEffect(() => {
+        getAllAuctions()
+       
+    }, [])
+
 
     return (
-        <>
+       
             <div className="container auctions">
                 <div className="card">
                     <div className="table-responsive">
@@ -19,19 +43,17 @@ const Auctions = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                             {auctions.map(auction => (
+                                <tr key={auction._id}>
                                     <td>
                                         <div className="d-flex px-2">
-                                            <div>
-                                                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-spotify.svg" className="avatar avatar-sm rounded-circle me-2" alt="Its a image" />
-                                            </div>
                                             <div className="my-auto">
-                                                <h6 className="mb-0 text-xs">Spotify</h6>
+                                                <h6 className="mb-0 text-xs">{auction._id}</h6>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <p className="text-xs font-weight-normal mb-0">$2,500</p>
+                                        <p className="text-xs font-weight-normal mb-0">{auction.curPrice}</p>
                                     </td>
                                     <td>
                                         <span className="badge badge-dot me-4">
@@ -40,23 +62,22 @@ const Auctions = () => {
                                         </span>
                                     </td>
                                     <td className="align-middle text-center">
-                                        3h 23m
+                                         {auction.duration}
                                     </td>
 
                                     <td className="align-middle">
-                                        <button className="btn btn-link text-secondary mb-0 viewButton">
-                                            View
-                                        </button>
+                                    <Link to={`/auction/${auction._id}`} className="btn btn-primary">View</Link>
                                     </td>
                                 </tr>
-
+                                ))} 
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-        </>
+            
+                
     )
 }
 
