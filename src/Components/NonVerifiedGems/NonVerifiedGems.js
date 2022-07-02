@@ -56,7 +56,7 @@ const NonVerifiedGems = () => {
             <table className="table align-items-center mb-0">
               <thead>
                 <tr>
-                  <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Seller Name</th>
+                  {/* <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Seller Name</th> */}
                   <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Product</th>
                   <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Gem Certificate</th>
                   {/* <th></th> */}
@@ -66,17 +66,7 @@ const NonVerifiedGems = () => {
               <tbody>
                 {nonVerifiedGems.map((gems) => (
                   <tr>
-                    <td>
-                      <div className="d-flex px-2">
-                        {/* <div>
-                                           <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-spotify.svg" className="avatar avatar-sm rounded-circle me-2" />
-                                       </div> */}
-                        <div className="my-auto">
-                          {/* <h6 className="mb-0 text-xs">{userData.data.data.firstName}</h6> */}
-                          <h6 className="mb-0 text-xs"></h6>
-                        </div>
-                      </div>
-                    </td>
+                    
                     <td>
                       <span className="badge badge-dot me-4">
                         <i className="bg-info"></i>
