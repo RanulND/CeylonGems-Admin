@@ -8,6 +8,7 @@ import './assets/css/material-kit.min.css'
 import { useEffect } from 'react';
 import Login from './Containers/Login/Login';
 import AuctionDashboard from './Containers/Auction Dashboard/AuctionDashboard';
+import AuctionDetailsDashboard from './Containers/AuctionDetails Dashboard/AuctionDetailsDashboard';
 import OrderDashboard from './Containers/Order Dashboard/OrderDashboard';
 import User from './Containers/User/User';
 import Chat from './Containers/Chat/Chat';
@@ -38,6 +39,7 @@ const App = () => {
           <Route path='/admin-dashboard' exact element={<AdminDashboard />} />
           <Route path='/user-dashboard' exact element={<UserDashboard />} />
           <Route path='/auctions' exact element={<AuctionDashboard />} />
+          <Route path='/auction/:id' exact element={<AuctionDetailsDashboard />} />
           <Route path='/orders' exact element={<OrderDashboard />} />
           <Route path='/dashboard' exact element={<Dashboard />} />
           <Route path='/user-dashboard/user/:id' exact element={<User />} />
