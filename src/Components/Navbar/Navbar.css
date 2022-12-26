@@ -1,0 +1,78 @@
+/* .navbar-brand {
+    font-size: 150% !important;
+}
+
+.nav-link {
+    font-size: 100% !important;
+    font-weight: 600 !important;
+}
+
+.login-button {
+    background-image: linear-gradient(195deg, rgb(89, 89, 236), rgb(9, 9, 65));
+}
+
+.login-button, .login-button.bg-gradient-primary {
+    box-shadow: 0 3px 3px 0 rgba(9, 9, 65, .15), 0 3px 1px -2px rgba(9, 9, 65, .2), 0 1px 5px 0 rgba(9, 9, 65, .15)
+}
+
+.login-button:hover{
+    background-color: rgb(9, 9, 65) !important;
+    border-color: rgb(9, 9, 65) !important;
+    box-shadow: 0 14px 26px -12px rgba(9, 9, 65, .4), 0 4px 23px 0 rgba(9, 9, 65, .15), 0 8px 10px -5px rgba(9, 9, 65, .2) !important
+}
+
+.nav{
+    text-decoration: none !important;
+} */
+
+.nav-bar .menuButton {
+    background-image: linear-gradient(195deg, rgb(89, 89, 236), rgb(9, 9, 65)) !important;
+    box-shadow: 0 3px 3px 0 rgba(9, 9, 65, .15), 0 3px 1px -2px rgba(9, 9, 65, .2), 0 1px 5px 0 rgba(9, 9, 65, .15) !important;
+    color: white !important;
+}
+
+.nav-bar .menuButton:hover{
+    background-color: rgb(9, 9, 65) !important;
+    border-color: rgb(9, 9, 65) !important;
+    box-shadow: 0 14px 26px -12px rgba(9, 9, 65, .4), 0 4px 23px 0 rgba(9, 9, 65, .15), 0 8px 10px -5px rgba(9, 9, 65, .2) !important
+}
+/* 
+.nav{
+    color: white;
+
+} */
+
+.nav-bar .offcanvas-start{
+    width: 300px !important;
+}
+
+.nav-bar .side-nav{
+    color: white;
+}
+
+.nav-bar .side-nav:hover{
+    font-weight: 500;
+    color: rgb(171, 168, 221);
+}
+
+.nav-bar .side-nav-item{
+    text-align: center;
+    border-radius: .75rem;
+}
+
+.nav-bar .side-nav-item:hover{
+   background-color: rgb(255, 255, 255, .1); 
+}
+
+.nav-bar .offcanvas-title{
+    color: white;
+    
+}
+
+.nav-bar .offcanvas-header{
+    text-align: center;
+}
+
+.nav-bar .btn-close{
+    color: white;
+}

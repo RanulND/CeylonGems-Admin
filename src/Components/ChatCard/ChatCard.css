@@ -1,0 +1,21 @@
+.chat-card .user{
+    text-align: 'left' !important;
+}
+
+.chat-card .unread-msg{
+    text-align: 'right' !important;
+}
+
+.chat-card .date{
+    text-align: 'right' !important;
+}
+
+.chat-card hr{
+    padding: 0;
+    line-height: 0;
+    margin: 0;
+}
+
+.chat-card .nameTxt{
+    font-size: 1rem;
+}
